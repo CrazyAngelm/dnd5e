@@ -1,19 +1,19 @@
 {
-  "id": "dnd5e",
-  "title": "DnD5e - Fifth Edition System",
+  "id": "magus_dnd5e",
+  "title": "DnD5e - Magus System",
   "description": "A system for playing the fifth edition of the worlds most popular role-playing game in the Foundry Virtual Tabletop environment.",
-  "version": "2.2.1",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": "10.291",
     "verified": "11"
   },
-  "url": "https://github.com/foundryvtt/dnd5e/",
-  "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
-  "download": "https://github.com/foundryvtt/dnd5e/releases/download/release-2.2.1/dnd5e-release-2.2.1.zip",
+  "url": "https://github.com/CrazyAngelm/magus_dnd5e/",
+  "manifest": "https://raw.githubusercontent.com/CrazyAngelm/magus_dnd5e/master/system.json",
+  "download": "",
   "authors": [
     {
-      "name": "Atropos",
-      "url": "https://foundryvtt.com",
+      "name": "CrazyAngelm",
+      "url": "",
       "flags": {}
     }
   ],
