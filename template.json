@@ -134,8 +134,46 @@
           "alignment": "",
           "race": ""
         },
+        "categorySkills":{
+          "survival":{
+            "value": 0
+          },
+          "attention":{
+            "value": 0
+          },
+          "erudition":{
+            "value": 0
+          },
+          "sociality":{
+            "value": 0
+          },
+          "sport":{
+            "value": 0
+          },
+          "herbalism":{
+            "value": 0
+          },
+          "calligraphy":{
+            "value": 0
+          },
+          "mining":{
+            "value": 0
+          },
+          "medicine":{
+            "value": 0
+          },
+          "stealth":{
+            "value": 0
+          },
+          "animalHandling":{
+            "value": 0
+          },
+          "craft":{
+            "value": 0
+          }
+        },
         "skills": {
-          "acr": {
+          "cok": {
             "value": 0,
             "ability": "dex",
             "bonuses": {
@@ -143,31 +181,31 @@
               "passive": ""
             }
           },
-          "ani": {
+          "grd": {
             "value": 0,
-            "ability": "wis",
+            "ability": "per",
             "bonuses": {
               "check": "",
               "passive": ""
             }
           },
-          "arc": {
+          "hnt": {
             "value": 0,
-            "ability": "int",
+            "ability": "per",
             "bonuses": {
               "check": "",
               "passive": ""
             }
           },
-          "ath": {
+          "gth": {
             "value": 0,
-            "ability": "str",
+            "ability": "per",
             "bonuses": {
               "check": "",
               "passive": ""
             }
           },
-          "dec": {
+          "int": {
             "value": 0,
             "ability": "cha",
             "bonuses": {
@@ -175,25 +213,9 @@
               "passive": ""
             }
           },
-          "his": {
+          "det": {
             "value": 0,
-            "ability": "int",
-            "bonuses": {
-              "check": "",
-              "passive": ""
-            }
-          },
-          "ins": {
-            "value": 0,
-            "ability": "wis",
-            "bonuses": {
-              "check": "",
-              "passive": ""
-            }
-          },
-          "itm": {
-            "value": 0,
-            "ability": "cha",
+            "ability": "per",
             "bonuses": {
               "check": "",
               "passive": ""
@@ -207,15 +229,15 @@
               "passive": ""
             }
           },
-          "med": {
+          "som": {
             "value": 0,
-            "ability": "wis",
+            "ability": "per",
             "bonuses": {
               "check": "",
               "passive": ""
             }
           },
-          "nat": {
+          "his": {
             "value": 0,
             "ability": "int",
             "bonuses": {
@@ -223,17 +245,17 @@
               "passive": ""
             }
           },
-          "prc": {
+          "rel": {
             "value": 0,
-            "ability": "wis",
+            "ability": "will",
             "bonuses": {
               "check": "",
               "passive": ""
             }
           },
-          "prf": {
+          "kom": {
             "value": 0,
-            "ability": "cha",
+            "ability": "int",
             "bonuses": {
               "check": "",
               "passive": ""
@@ -247,9 +269,25 @@
               "passive": ""
             }
           },
-          "rel": {
+          "dec": {
             "value": 0,
-            "ability": "int",
+            "ability": "cha",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "itm": {
+            "value": 0,
+            "ability": "str",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "prf": {
+            "value": 0,
+            "ability": "cha",
             "bonuses": {
               "check": "",
               "passive": ""
@@ -263,7 +301,7 @@
               "passive": ""
             }
           },
-          "ste": {
+          "acr": {
             "value": 0,
             "ability": "dex",
             "bonuses": {
@@ -271,9 +309,161 @@
               "passive": ""
             }
           },
-          "sur": {
+          "ath": {
             "value": 0,
-            "ability": "wis",
+            "ability": "str",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "crs": {
+            "value": 0,
+            "ability": "dex",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "nat": {
+            "value": 0,
+            "ability": "int",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "hsr": {
+            "value": 0,
+            "ability": "per",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "wrt": {
+            "value": 0,
+            "ability": "dex",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "tst": {
+            "value": 0,
+            "ability": "int",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "min": {
+            "value": 0,
+            "ability": "str",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "rtr": {
+            "value": 0,
+            "ability": "per",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "exm": {
+            "value": 0,
+            "ability": "per",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "wtr": {
+            "value": 0,
+            "ability": "dex",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "hck": {
+            "value": 0,
+            "ability": "dex",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "ste": {
+            "value": 0,
+            "ability": "per",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "thf": {
+            "value": 0,
+            "ability": "dex",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "anh": {
+            "value": 0,
+            "ability": "cha",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "akn": {
+            "value": 0,
+            "ability": "int",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "und": {
+            "value": 0,
+            "ability": "per",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "rid": {
+            "value": 0,
+            "ability": "str",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "cra": {
+            "value": 0,
+            "ability": "dex",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "rep": {
+            "value": 0,
+            "ability": "int",
+            "bonuses": {
+              "check": "",
+              "passive": ""
+            }
+          },
+          "frg": {
+            "value": 0,
+            "ability": "str",
             "bonuses": {
               "check": "",
               "passive": ""
@@ -381,7 +571,10 @@
         "xp": {
           "value": 0
         },
+        "additionalInfo": "",
         "appearance": "",
+        "knowledge": "",
+        "professions": "",
         "trait": "",
         "ideal": "",
         "bond": "",
@@ -403,6 +596,34 @@
           "label": ""
         },
         "tertiary": {
+          "value": 0,
+          "max": 0,
+          "sr": false,
+          "lr": false,
+          "label": ""
+        },
+        "fourth": {
+          "value": 0,
+          "max": 0,
+          "sr": false,
+          "lr": false,
+          "label": ""
+        },
+        "fifth": {
+          "value": 0,
+          "max": 0,
+          "sr": false,
+          "lr": false,
+          "label": ""
+        },
+        "sixth": {
+          "value": 0,
+          "max": 0,
+          "sr": false,
+          "lr": false,
+          "label": ""
+        },
+        "seventh": {
           "value": 0,
           "max": 0,
           "sr": false,

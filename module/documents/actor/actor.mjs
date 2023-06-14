@@ -230,7 +230,7 @@ export default class Actor5e extends Actor {
    */
   _prepareBaseArmorClass() {
     const ac = this.system.attributes.ac;
-    ac.armor = 10;
+    ac.armor = 8;
     ac.shield = ac.bonus = ac.cover = 0;
   }
 

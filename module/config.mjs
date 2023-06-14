@@ -3,7 +3,6 @@ import { preLocalize } from "./utils.mjs";
 
 // Namespace Configuration Values
 const DND5E = {};
-
 // ASCII Artwork
 DND5E.ASCII = `_______________________________
 ______      ______ _____ _____
@@ -46,15 +45,20 @@ DND5E.abilities = {
     abbreviation: "DND5E.AbilityConAbbr",
     type: "physical"
   },
+  per: {
+    label: "DND5E.AbilityPer",
+    abbreviation: "DND5E.AbilityPerAbbr",
+    type: "physical"
+  },
   int: {
     label: "DND5E.AbilityInt",
     abbreviation: "DND5E.AbilityIntAbbr",
     type: "mental",
     defaults: { vehicle: 0 }
   },
-  wis: {
-    label: "DND5E.AbilityWis",
-    abbreviation: "DND5E.AbilityWisAbbr",
+  will: {
+    label: "DND5E.AbilityWill",
+    abbreviation: "DND5E.AbilityWillAbbr",
     type: "mental",
     defaults: { vehicle: 0 }
   },
@@ -105,11 +109,40 @@ DND5E.hitPointsAbility = "con";
 /* -------------------------------------------- */
 
 /**
+ * Configuration data for categorySkills.
+ *
+ * @typedef {object} CategorySkillConfiguration
+ * @property {string} label    Localized label.
+ * @property {int} value  value
+ */
+
+/**
+ * The set of skill which can be trained with their default ability scores.
+ * @enum {CategorySkillConfiguration}
+ */
+DND5E.categorySkills = {
+  survival: { label: "DND5E.MainSkillSurvival", value: 0 },
+  attention: { label: "DND5E.MainSkillAttention", value: 0 },
+  erudition: { label: "DND5E.MainSkillErudition", value: 0 },
+  sociality: { label: "DND5E.MainSkillSociality", value: 0 },
+  sport: { label: "DND5E.MainSkillSport", value: 0 },
+  herbalism: { label: "DND5E.MainSkillHerbalism", value: 0 },
+  calligraphy: { label: "DND5E.MainSkillCalligraphy", value: 0 },
+  mining: { label: "DND5E.MainSkillMining", value: 0 },
+  medicine: { label: "DND5E.MainSkillMedicine", value: 0 },
+  stealth: { label: "DND5E.MainSkillStealth", value: 0 },
+  animalHandling: { label: "DND5E.MainSkillAnimalHandling", value: 0 },
+  craft: { label: "DND5E.MainSkillCraft", value: 0 },
+};
+preLocalize("categorySkills", { keys: ["label"], sort: false });
+
+/**
  * Configuration data for skills.
  *
  * @typedef {object} SkillConfiguration
  * @property {string} label    Localized label.
  * @property {string} ability  Key for the default ability used by this skill.
+ * @property {string} group  Key for the group of skills.
  */
 
 /**
@@ -117,26 +150,68 @@ DND5E.hitPointsAbility = "con";
  * @enum {SkillConfiguration}
  */
 DND5E.skills = {
-  acr: { label: "DND5E.SkillAcr", ability: "dex" },
-  ani: { label: "DND5E.SkillAni", ability: "wis" },
-  arc: { label: "DND5E.SkillArc", ability: "int" },
-  ath: { label: "DND5E.SkillAth", ability: "str" },
-  dec: { label: "DND5E.SkillDec", ability: "cha" },
-  his: { label: "DND5E.SkillHis", ability: "int" },
-  ins: { label: "DND5E.SkillIns", ability: "wis" },
-  itm: { label: "DND5E.SkillItm", ability: "cha" },
-  inv: { label: "DND5E.SkillInv", ability: "int" },
-  med: { label: "DND5E.SkillMed", ability: "wis" },
-  nat: { label: "DND5E.SkillNat", ability: "int" },
-  prc: { label: "DND5E.SkillPrc", ability: "wis" },
-  prf: { label: "DND5E.SkillPrf", ability: "cha" },
-  per: { label: "DND5E.SkillPer", ability: "cha" },
-  rel: { label: "DND5E.SkillRel", ability: "int" },
-  slt: { label: "DND5E.SkillSlt", ability: "dex" },
-  ste: { label: "DND5E.SkillSte", ability: "dex" },
-  sur: { label: "DND5E.SkillSur", ability: "wis" }
+  // Survival
+  cok: { label: "DND5E.SkillCok", ability: "dex", group: "DND5E.MainSkillSurvival" },
+  grd: { label: "DND5E.SkillGrd", ability: "per", group: "DND5E.MainSkillSurvival" },
+  hnt: { label: "DND5E.SkillHnt", ability: "per", group: "DND5E.MainSkillSurvival" },
+  gth: { label: "DND5E.SkillGth", ability: "per", group: "DND5E.MainSkillSurvival" },
+
+  // Attention
+  int: { label: "DND5E.SkillInt", ability: "cha", group: "DND5E.MainSkillAttention" },
+  det: { label: "DND5E.SkillDet", ability: "per", group: "DND5E.MainSkillAttention" },
+  inv: { label: "DND5E.SkillInv", ability: "int", group: "DND5E.MainSkillAttention" },
+  som: { label: "DND5E.SkillSom", ability: "per", group: "DND5E.MainSkillAttention" },
+
+  // Erudition
+  his: { label: "DND5E.SkillHis", ability: "int", group: "DND5E.MainSkillErudition" },
+  rel: { label: "DND5E.SkillRel", ability: "will", group: "DND5E.MainSkillErudition" },
+  kom: { label: "DND5E.SkillKom", ability: "int", group: "DND5E.MainSkillErudition" },
+
+  // Sociality
+  per: { label: "DND5E.SkillPer", ability: "cha", group: "DND5E.MainSkillSociality" },
+  dec: { label: "DND5E.SkillDec", ability: "cha", group: "DND5E.MainSkillSociality" },
+  itm: { label: "DND5E.SkillItm", ability: "str", group: "DND5E.MainSkillSociality" },
+  prf: { label: "DND5E.SkillPrf", ability: "cha", group: "DND5E.MainSkillSociality" },
+
+  // Sport
+  slt: { label: "DND5E.SkillSlt", ability: "dex", group: "DND5E.MainSkillSport" },
+  acr: { label: "DND5E.SkillAcr", ability: "dex", group: "DND5E.MainSkillSport" },
+  ath: { label: "DND5E.SkillAth", ability: "str", group: "DND5E.MainSkillSport" },
+
+  // Herbalism
+  crs: { label: "DND5E.SkillCrs", ability: "dex", group: "DND5E.MainSkillHerbalism" },
+  nat: { label: "DND5E.SkillNat", ability: "int", group: "DND5E.MainSkillHerbalism" },
+  hsr: { label: "DND5E.SkillHsr", ability: "per", group: "DND5E.MainSkillHerbalism" },
+
+  // Calligraphy
+  wrt: { label: "DND5E.SkillWrt", ability: "dex", group: "DND5E.MainSkillCalligraphy" },
+  tst: { label: "DND5E.SkillTst", ability: "int", group: "DND5E.MainSkillCalligraphy" },
+
+  // Mining
+  min: { label: "DND5E.SkillMin", ability: "str", group: "DND5E.MainSkillMining" },
+  rtr: { label: "DND5E.SkillRtr", ability: "per", group: "DND5E.MainSkillMining" },
+
+  // Medicine
+  exm: { label: "DND5E.SkillExm", ability: "per", group: "DND5E.MainSkillMedicine" },
+  wtr: { label: "DND5E.SkillWtr", ability: "dex", group: "DND5E.MainSkillMedicine" },
+
+  // Stealth
+  hck: { label: "DND5E.SkillHck", ability: "dex", group: "DND5E.MainSkillStealth" },
+  ste: { label: "DND5E.SkillSte", ability: "per", group: "DND5E.MainSkillStealth" },
+  thf: { label: "DND5E.SkillThf", ability: "dex", group: "DND5E.MainSkillStealth" },
+
+  // Animal Handling
+  anh: { label: "DND5E.SkillAnh", ability: "cha", group: "DND5E.MainSkillAnimalHandling" },
+  akn: { label: "DND5E.SkillAkn", ability: "int", group: "DND5E.MainSkillAnimalHandling" },
+  und: { label: "DND5E.SkillUnd", ability: "per", group: "DND5E.MainSkillAnimalHandling" },
+  rid: { label: "DND5E.SkillRid", ability: "str", group: "DND5E.MainSkillAnimalHandling" },
+
+  // Craft
+  cra: { label: "DND5E.SkillCra", ability: "dex", group: "DND5E.MainSkillCraft" },
+  rep: { label: "DND5E.SkillRep", ability: "int", group: "DND5E.MainSkillCraft" },
+  frg: { label: "DND5E.SkillFrg", ability: "str", group: "DND5E.MainSkillCraft" }
 };
-preLocalize("skills", { key: "label", sort: true });
+preLocalize("skills", { keys: ["label", "group"], sort: false });
 
 /* -------------------------------------------- */
 
@@ -932,7 +1007,7 @@ DND5E.encumbrance = {
     metric: 110
   },
   strMultiplier: {
-    imperial: 15,
+    imperial: 100,
     metric: 6.8
   },
   vehicleWeightMultiplier: {
@@ -1246,16 +1321,26 @@ preLocalize("spellTags", {keys: ["label", "abbr"]});
  * @enum {string}
  */
 DND5E.spellSchools = {
-  abj: "DND5E.SchoolAbj",
   con: "DND5E.SchoolCon",
-  div: "DND5E.SchoolDiv",
-  enc: "DND5E.SchoolEnc",
+  conCreation: "DND5E.SchoolConCreation",
+  conDestruction: "DND5E.SchoolConDestruction",
   evo: "DND5E.SchoolEvo",
+  evoCalling: "DND5E.SchoolEvoCalling",
+  evoSpace: "DND5E.SchoolEvoSpace",
+  abj: "DND5E.SchoolAbj",
+  abjProtection: "DND5E.SchoolAbjProtection",
+  abjDivination: "DND5E.SchoolAbjDivination",
   ill: "DND5E.SchoolIll",
+  illEnchantment: "DND5E.SchoolIllEnchantment",
+  illSense: "DND5E.SchoolIllSense",
+  conv: "DND5E.SchoolConv",
+  convTransformation: "DND5E.SchoolConvTransformation",
+  convChanges: "DND5E.SchoolConvChanges",
   nec: "DND5E.SchoolNec",
-  trs: "DND5E.SchoolTrs"
+  necCurse: "DND5E.SchoolNecCurse",
+  necSoul: "DND5E.SchoolNecSoul"
 };
-preLocalize("spellSchools", { sort: true });
+preLocalize("spellSchools", { sort: false });
 
 /* -------------------------------------------- */
 

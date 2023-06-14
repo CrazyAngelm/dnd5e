@@ -205,7 +205,6 @@
             </ul>
 
             <section class="center-pane flexcol">
-
                 {{!-- Body Attributes --}}
                 <ul class="attributes flexrow">
                     {{#each resources as |res|}}
@@ -228,6 +227,11 @@
                     </li>
                     {{/each}}
                 </ul>
+
+                <label>{{ localize "DND5E.Knowledge" }}</label>
+                <textarea name="system.details.knowledge">{{system.details.knowledge}}</textarea>
+                <label>{{ localize "DND5E.Professions" }}</label>
+                <textarea name="system.details.professions">{{system.details.professions}}</textarea>
 
                 {{!-- Counters --}}
                 <div class="counters">

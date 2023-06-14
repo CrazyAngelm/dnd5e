@@ -177,7 +177,8 @@ function _configureTrackableAttributes() {
 
   CONFIG.Actor.trackableAttributes = {
     character: {
-      bar: [...creature.bar, "resources.primary", "resources.secondary", "resources.tertiary", "details.xp"],
+      bar: [...creature.bar, "resources.primary", "resources.secondary", "resources.tertiary", "resources.fourth",  "resources.fifth", "resources.sixth", 
+      "resources.seventh", "details.xp"],
       value: [...creature.value]
     },
     npc: {

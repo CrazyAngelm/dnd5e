@@ -103,6 +103,7 @@ export default class ActorSheet5e extends ActorSheet {
       itemContext: {},
       abilities: foundry.utils.deepClone(this.actor.system.abilities),
       skills: foundry.utils.deepClone(this.actor.system.skills ?? {}),
+      categorySkills: foundry.utils.deepClone(this.actor.system.categorySkills ?? {}),
       tools: foundry.utils.deepClone(this.actor.system.tools ?? {}),
       labels: this._getLabels(),
       movement: this._getMovementSpeed(this.actor.system),
@@ -140,14 +141,26 @@ export default class ActorSheet5e extends ActorSheet {
       abl.baseProf = source.system.abilities[a]?.proficient ?? 0;
     }
 
+    // // categorySkills.
+    // ["categorySkills"].forEach(prop => {
+    //   for ( const [key, entry] of Object.entries(context[prop]) ) {
+    //     entry.value = source.system[prop]?.[key]?.value ?? 0;
+    //   }
+    // });
+
     // Skills & tools.
     ["skills", "tools"].forEach(prop => {
+      let previousGroup = "";
       for ( const [key, entry] of Object.entries(context[prop]) ) {
         entry.abbreviation = CONFIG.DND5E.abilities[entry.ability]?.abbreviation;
         entry.icon = this._getProficiencyIcon(entry.value);
         entry.hover = CONFIG.DND5E.proficiencyLevels[entry.value];
         entry.label = prop === "skills" ? CONFIG.DND5E.skills[key]?.label : Trait.keyLabel("tool", key);
         entry.baseValue = source.system[prop]?.[key]?.value ?? 0;
+        entry.categoryValue = 
+
+        entry.group = prop === "skills" && CONFIG.DND5E.skills[key]?.group !== previousGroup ? CONFIG.DND5E.skills[key]?.group : "";
+        previousGroup = entry.group !== "" ? entry.group : previousGroup;
       }
     });
 

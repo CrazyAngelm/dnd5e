@@ -35,6 +35,9 @@ import TraitsFields from "./templates/traits.mjs";
  * @property {string} details.ideal                       Character's ideals.
  * @property {string} details.bond                        Character's bonds.
  * @property {string} details.flaw                        Character's flaws.
+ * @property {string} details.knowledge                   Description of character's knowledge.
+ * @property {string} details.professions                 Description of character's professions.
+ * @property {string} details.additionalInfo               Description of character's additionalInfo.
  * @property {object} traits
  * @property {SimpleTraitData} traits.weaponProf          Character's weapon proficiencies.
  * @property {SimpleTraitData} traits.armorProf           Character's armor proficiencies.
@@ -43,6 +46,10 @@ import TraitsFields from "./templates/traits.mjs";
  * @property {CharacterResourceData} resources.primary    Resource number one.
  * @property {CharacterResourceData} resources.secondary  Resource number two.
  * @property {CharacterResourceData} resources.tertiary   Resource number three.
+ * @property {CharacterResourceData} resources.fourth   Resource number fourth.
+ * @property {CharacterResourceData} resources.fifth   Resource number fifth.
+ * @property {CharacterResourceData} resources.sixth   Resource number sixth.
+ * @property {CharacterResourceData} resources.seventh   Resource number seventh.
  */
 export default class CharacterData extends CreatureTemplate {
 
@@ -103,7 +110,10 @@ export default class CharacterData extends CreatureTemplate {
         trait: new foundry.data.fields.StringField({required: true, label: "DND5E.PersonalityTraits"}),
         ideal: new foundry.data.fields.StringField({required: true, label: "DND5E.Ideals"}),
         bond: new foundry.data.fields.StringField({required: true, label: "DND5E.Bonds"}),
-        flaw: new foundry.data.fields.StringField({required: true, label: "DND5E.Flaws"})
+        flaw: new foundry.data.fields.StringField({required: true, label: "DND5E.Flaws"}),
+        knowledge: new foundry.data.fields.StringField({required: true, label: "DND5E.Knowledge"}),
+        professions: new foundry.data.fields.StringField({required: true, label: "DND5E.Professions"}),
+        additionalInfo: new foundry.data.fields.StringField({required: true, label: "DND5E.AdditionalInfo"}),
       }, {label: "DND5E.Details"}),
       traits: new foundry.data.fields.SchemaField({
         ...TraitsFields.common,
@@ -114,7 +124,11 @@ export default class CharacterData extends CreatureTemplate {
       resources: new foundry.data.fields.SchemaField({
         primary: makeResourceField({label: "DND5E.ResourcePrimary"}),
         secondary: makeResourceField({label: "DND5E.ResourceSecondary"}),
-        tertiary: makeResourceField({label: "DND5E.ResourceTertiary"})
+        tertiary: makeResourceField({label: "DND5E.ResourceTertiary"}),
+        fourth: makeResourceField({label: "DND5E.ResourceFourth"}),
+        fifth: makeResourceField({label: "DND5E.ResourceFifth"}),
+        sixth: makeResourceField({label: "DND5E.ResourceSixth"}),
+        seventh: makeResourceField({label: "DND5E.ResourceSeventh"})
       }, {label: "DND5E.Resources"})
     });
   }

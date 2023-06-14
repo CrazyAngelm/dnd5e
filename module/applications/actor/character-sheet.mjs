@@ -23,7 +23,7 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
     const context = await super.getData(options);
 
     // Resources
-    context.resources = ["primary", "secondary", "tertiary"].reduce((arr, r) => {
+    context.resources = ["primary", "secondary", "tertiary", "fourth",  "fifth", "sixth", "seventh", ].reduce((arr, r) => {
       const res = context.actor.system.resources[r] || {};
       res.name = r;
       res.placeholder = game.i18n.localize(`DND5E.Resource${r.titleCase()}`);
